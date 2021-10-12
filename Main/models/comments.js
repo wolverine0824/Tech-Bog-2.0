@@ -11,7 +11,7 @@ comments.init(
           primaryKey: true,
           autoIncrement: true,
         },
-        name: {
+        comments: {
           type: DataTypes.STRING,
           allowNull: false,
         },
@@ -23,14 +23,10 @@ comments.init(
           allowNull: false,
           defaultValue: DataTypes.NOW,
         },
-        needed_funding: {
-          type: DataTypes.FLOAT,
-          allowNull: false,
-        },
         user_id: {
           type: DataTypes.INTEGER,
           references: {
-            model: 'user',
+            model: 'post',
             key: 'id',
           },
         },
@@ -43,3 +39,5 @@ comments.init(
         modelName: 'Comments',
       }
 );
+
+module.exports = Comments;
